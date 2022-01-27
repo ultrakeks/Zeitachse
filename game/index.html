@@ -1,0 +1,183 @@
+<html lang="de">
+    <head>
+        <title>
+            Zeitachse - Spiel
+        </title>
+        <link rel="stylesheet" href="play.css">
+        <script src="../phaser/phaser.js"></script> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    </head>
+    <body>
+        
+        <div class="containerGame">
+            <div class="title">
+                <h3>Zeitachse</h3>
+            </div>
+            <div class="code">
+                <h4 id="Beitrittscode">Beitrittscode</h4>
+            </div>
+            <div class="control">
+                <div class="info">
+                    <h4 id="Spielzug"></h4>
+                </div>
+                <div id="Btn_nextTurn" onclick="Funktion " style="cursor: pointer" class="nturn">
+                    <h4 id='lbl_nextTurn'>Nächster Zug</h4>
+                </div>
+                <div id ="Btn_doubt" onclick="Funktion " style="cursor: pointer" class="doubt">
+                    <h4 id='lbl_doubt'> Anzweifeln</h4>
+                </div>
+            </div>
+            <div class="plist" id='plist'>
+                <h4>Spielerliste</h4>
+            </div>
+        </div>
+        <div class="containerLogin">
+            <div class="blueBg">
+                <div class="box signin">
+                    <h2>Bestehendem Spiel beitreten</h2>
+                    <button class="signinBtn"> via Code</button>
+                </div>
+                <div class="box signup">
+                    <h2>Virtuellen Raum erstellen</h2>
+                    <button class="signupBtn">Spiel erstellen</button>
+                </div>
+                
+            </div>
+            
+            <div class="formBx">
+                <div class="form signinForm">
+                    <form action="/Sebastian/website/onlinespiel/main.html" method="GET">
+                        <h3 id='lbl_dontExist_J' class='labels'>Dieser Raum existiert nicht</h3>
+                        <h4>Spiel beitreten</h4>                        
+                        <input type="text" placeholder="Nickname" id='txt_PlayerName' name='name' maxlength="12">
+                        <input type="text" placeholder="Raumname" id='txt_roomCode' name='name' maxlength="10">
+                        <input type="button"   value="Raum beitreten" id='Btn_joinRoom'>
+                        
+                        
+                        <a href="http://www.spiel-zeitachse.de/Regelwerk/regelwerk.html" class="forgot">Was sind die Spielregeln?</a>
+                    </form>
+                </div>
+                <div class="form signupForm">
+                    <form>
+                        <h3 id='lbl_dontExist_N' class='labels'>Dieser Raum Existiert bereits</h3>
+                        <h4>Virtuellen Raum erstellen</h4>                        
+                        <input type='text' placeholder='Benutzername' id='txt_createRoomUsername' maxlength="12">
+                        <input type="text" placeholder="Raumname" id='txt_RoomName' maxlength="10">
+                        <input type="button" id='Btn_createGame'  value="Spiel erstellen">
+                        
+                        
+                        <a href="http://www.spiel-zeitachse.de/Regelwerk/regelwerk.html" class="forgot">Was sind die Spielregeln?</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class='containerGameandLogin'>
+            
+            <div id="confettis" class="con">
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+            </div>
+            <div class='selecten'>
+                <form>
+                    <div type='button' id='Btn_startGame' value='Spiel starten' class='start' >
+                        <h4>Spiel starten</h4>
+                        <p>Hinweis: Es können keine weitere Spieler während dem Spiel beitreten!</p>
+                    </div>
+                    <div class='containerSelect' id='selectator' >
+                    <div class='allAge'>
+                        <input type='checkbox' id='all' class='checkers' checked onclick="unCheck()">
+                        <label for='all'>Alle Zeitalter</label>
+                    </div>
+                    <div class="multiselect">
+                      <div class="selectBox" id='Btn_select'>
+        
+                        <input type="button"  value="Benutzerdefiniert" class='selectBox'>
+                        <div class="overSelect"></div>
+                      </div>
+                      <div id="checkboxes">
+                        <label for="hunters">
+                            <input type="checkbox" id="hunters" class='checkers' onclick="deCheck()"/>Zeitalter der Ägypter und Sumerer / Prähistorie (-1000 v. Chr.)</label>
+                        <label for="romanGreek">
+                          <input type="checkbox" id="romanGreek" class='checkers' onclick="deCheck()"/>Zeitalter der Römer und Griechen / Antike (~1000 v. Chr. - 500 n. Chr.)</label>
+                        <label for="darkAge2">
+                          <input type="checkbox" id="darkAge2" class='checkers' onclick="deCheck()"/>Zeitalter der Städte und Staaten / Mittelalter (~500 - 1500 n. Chr.)</label>
+                        <label for="rennaisance">
+                          <input type="checkbox" id="rennaisance" class='checkers' onclick="deCheck()"/>Zeitalter der Entdecker und Reformatoren / Frühe Neuzeit (~1500 - 1700 n. Chr.)</label>
+                        <label for="enlightment">
+                            <input type="checkbox" id="enlightment" class='checkers' onclick="deCheck()"/>Zeitalter der Perücken und Revolution / Aufklärung (~1700 - 1800 n. Chr.)</label>
+                        <label for="industry">
+                            <input type="checkbox" id="industry" class='checkers' onclick="deCheck()"/>Zeitalter der Bürger und Dampfmaschinen / Industrialisierung (~1800 - 1900 n. Chr.)</label>
+
+                        <label for="now">
+                            <input type="checkbox" id="now" class='checkers' onclick="deCheck()"/>Zeitalter der Computer und Telekommunikation (~1950 n. Chr. - Jetzt)</label>
+                        
+                      </div>
+        
+                      
+        
+                    </div>
+                    </div>
+                  </form>
+            </div>
+            <div class="x">
+                <h2 id="xixix"></h2>
+                <input type='button' id='xx' class="xx" value='Nochmal spielen'>
+                
+            </div>
+
+                
+        
+            
+        <div id='phaser-game' class='phaser-game'></div>
+
+        <div class='test'>
+            <h1 id='testFont'></h1>
+        </div>
+
+    </div>
+
+    <form class="mobile" action="" method="post">
+        <h3>Das Spiel ist leider nicht für den Hochkantmodus optimiert. <br/><br/>Halte dein Smartphone bitte seitwärts <br/> <br/>Oder wechsle ggf. auf einen PC oder Tablet.</h3>
+    </form>
+    
+
+    </body>
+
+    <script>
+        window.addEventListener('resize', () => { 
+        document.querySelector(':root').style.setProperty('--vh', window.innerHeight/100 + 'px');
+        document.querySelector(':root').style.setProperty('--vw', window.innerWidth/100 + 'px');
+})
+
+    function deCheck() {
+        document.getElementById('all').checked = false
+    }
+    function unCheck() {
+        document.getElementById('hunters').checked = false
+        document.getElementById('romanGreek').checked = false
+        document.getElementById('darkAge2').checked = false
+        document.getElementById('rennaisance').checked = false
+        document.getElementById('enlightment').checked = false
+        document.getElementById('industry').checked = false
+        document.getElementById('now').checked = false
+
+    }
+    </script>
+
+</html>

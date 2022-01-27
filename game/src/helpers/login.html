@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Loginscreen</title>
+        <link rel="stylesheet" type="text/css">
+        <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+            *
+            {
+                position: relative;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: Verdana;
+            
+            }
+
+            .container{
+                position: relative;
+                width: 800px;
+                height: 500px;
+                margin: 20px;
+                
+                
+            
+            }
+            .blueBg{
+                position:absolute;
+                top: 40px;
+                width: 100%;
+                height: 420px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #2c2f33; /*blur grauer Hintergrund*/
+                box-shadow: 0 5px 45px #2c2f33;
+                border-radius: 20px;
+            
+            }
+            
+            .blueBg .box{
+                position: relative;
+                width: 50%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            
+            .blueBg .box h2{
+                color: ivory;
+                font-size: 1.2em;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+            .blueBg .box button{
+                cursor: pointer;
+                padding: 10px 20px;
+                background: ivory;
+                color: #2c2f33;
+                font-size: 16px;
+                font-weight: 500;
+                border: none;
+                border-radius: 15px;
+            }
+            
+            .formBx
+            {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+                background: #fff;
+                z-index:1000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 5px 45px #2c2f33;
+                transition: 0.5s ease-in-out;
+                overflow: hidden;
+                border-radius: 30px;
+            }
+            
+            .formBx.active{
+                left: 50%;
+                
+            }
+            
+            
+            .formBx .form{
+                position:absolute;
+                left:0%;
+                width:100%;
+                padding: 50px;
+                transition: 0.5s;
+            
+            }
+            
+            .formBx .signinForm{
+                
+                transition-delay: 0.25s;
+                
+            }
+            
+            
+            .formBx.active .signinForm{
+                left: -100%;
+                transition-delay: 0s;
+            }
+            
+            .formBx .signupForm{
+                left: 100%;
+                transition-delay: 0s;
+            }
+            
+            .formBx.active .signupForm{
+                left:0;
+                transition-delay: 0.25s;
+            }
+            
+            
+            .formBx .form form
+            {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .formBx .form form h3{
+                font-size: 1.5em;
+                color: #df421b;
+                margin-bottom: 20px;
+                font-weight: 500;
+                text-align: center;
+            }
+            
+            .formBx .form form h4{
+                font-size: larger;
+                color: #2c2f33;
+                margin-bottom:15px;
+                text-align: center;
+                
+            }
+            
+            .formBx .form form input{
+                width: 100%;
+                margin-bottom: 20px;
+                padding: 10px;
+                outline: none;
+                font-size: 16px;
+                border: 1px solid #2c2f33;
+                border-radius: 15px;
+            }
+            
+            
+            .formBx .form form input[type="button"]{
+                background:#fc5c65;
+                border: none;
+                border-radius: 15px;
+                color: ivory;
+                max-width: 150px;
+                cursor: pointer;
+                align-self: center;
+                
+            
+            }
+            
+            .formBx .form form input[type="button"][name="ohnecode"]{
+                background:darkcyan;
+                border: none;
+                border-radius: 15px;
+                color: #fffff0;
+                max-width: 300px;
+                cursor: pointer;
+                align-self: center;
+                
+            
+            }
+            
+            .formBx.active .signupForm input[type="checkbox"]{
+               width: 30px;
+               
+            }
+            
+            .formBx.active .signupForm label{
+                text-align: center;
+                align-self: center;
+                max-width: 150px;
+                margin-bottom: 20px;
+                
+            }
+            .formBx.active .signupForm input[type="button"]{
+                background:darkcyan;
+                border: none;
+                color: ivory;
+                max-width: 150px;
+                cursor: pointer
+            
+            }
+            
+            .formBx .form form .forgot{
+                color:#2c2f33;
+                text-decoration: none;
+                text-align: center;
+            }
+            
+            
+            @media (max-width: 991px){
+                .container{
+                    max-width: 400px;
+                    height: 650px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .container .blueBg{
+                    top: 0;
+                    height: 100%;
+                }
+            
+                .formBx{
+                 width: 100%; 
+                 height: 500px ;
+                 top: 0; 
+                 box-shadow: none;
+                }
+            
+                .blueBg .box{
+                    position: absolute;
+                    width: 100%;
+                    height: 150px;
+                    bottom: 0;
+                }
+            
+                .box.signin{
+                  top:0;
+                }
+                .formBx.active{
+                    left:0;
+                    top: 150px;
+                }
+            }
+            
+            
+            
+            </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="blueBg">
+                <div class="box signin">
+                    <h2>Bestehendem Spiel beitreten</h2>
+                    <button class="signinBtn"> via Code</button>
+                </div>
+                <div class="box signup">
+                    <h2>Virtuellen Raum erstellen</h2>
+                    <button class="signupBtn">Spiel erstellen</button>
+                </div>
+                
+            </div>
+            
+            <div class="formBx">
+                <div class="form signinForm">
+                    <form action="/Sebastian/website/onlinespiel/main.html" method="GET">
+                        <h3 id='lbl_dontExist_J'>Dieser Raum existiert nicht</h3>
+                        <h4>Spiel beitreten</h4>                        
+                        <input type="text" placeholder="Nickname" id='txt_PlayerName' name='name'>
+                        <input type="text" placeholder="Beitrittscode" id='txt_roomCode' name='name'>
+                        <input type="button"   value="Raum beitreten" id='Btn_joinRoom'>
+                        <input type="button" name="ohnecode" value="Öffentlichem Spiel beitreten">
+                        
+                        
+                        <a href="/Maxi/Regelwerk/regelwerk.html" class="forgot">Was sind die Spielregeln?</a>
+                    </form>
+                </div>
+                <div class="form signupForm">
+                    <form>
+                        <h3 id='lbl_dontExist_N'>Dieser Raum Existiert bereits</h3>
+                        <h4>Virtuellen Raum erstellen</h4>                        
+                        <input type='text' placeholder='Benutzername' id='txt_createRoomUsername'>
+                        <input type="text" placeholder="Raumname" id='txt_RoomName'>
+                        <div claas="checkbox1" >
+                            <input type="checkbox" id ="cb_stats" name="mache Statistiken" value="stats">
+                            <label for="stats"> als Zuschauer</label>
+                        </div>
+                        <div class="checkbox2">
+                            <input type="checkbox" id="cb_open" name="öffentlich" value="open">
+                            <label for="open"> öffentlich</label>
+                        </div>
+                        
+                        <input type="button" id='Btn_createGame'  value="Spiel erstellen">
+                        
+                        
+                        <a href="/Sebastian/website/eroeffnung/index.html" class="forgot">Hinweis</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="ubox">
+
+        </div>
+
+
+        <script>
+            const signinBtn = document.querySelector('.signinBtn');
+            const signupBtn = document.querySelector('.signupBtn');
+            const formBx = document.querySelector('.formBx');
+            
+            const body= document.querySelector('body');
+
+            signupBtn.onclick = function(){
+                formBx.classList.add('active');
+                body.classList.add('active');
+                
+            }
+
+            signinBtn.onclick = function(){
+                formBx.classList.remove('active');
+                body.classList.remove('active');
+                
+            }
+
+            document.getElementById("code").innerHTML = number;
+        </script>
+    </body>
+</html>

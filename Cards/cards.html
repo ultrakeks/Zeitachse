@@ -1,0 +1,156 @@
+
+<html lang="de">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>
+            Zeitachse - Ereignisse
+        </title>
+        <link rel="stylesheet" href="cards.css">
+        <script src="../game/src/helpers/Events.js"></script>
+
+    </head>
+    <body>
+        <div class="ubox">
+            <div class="title">
+                <button  style="cursor: pointer" onclick="location.href='../Downloads/downloadB.html'" id="Back"><h3>◄ Zurück</h3></button>
+                <h1>Ereignisse</h1>
+                <div class='doublepack'>
+                    <button  style="cursor: pointer" onclick="location.href='http://www.spiel-zeitachse.de:8080'" id="Play"><h3>Jetzt spielen!</h3></button>
+                    <input type='text' id='SearchBar' class='SearchBar' placeholder="Suchen...">
+                </div>
+               
+            </div>
+            
+            <div class="content" id='content'></div>
+        </div>
+
+
+    
+
+    </body>
+
+    <script type="module">
+        import {Events} from '../game/src/helpers/Events.js'
+        
+        document.querySelector(':root').style.setProperty('--vw', window.innerWidth/100 + 'px');
+        window.addEventListener('resize', () => { 
+        document.querySelector(':root').style.setProperty('--vw', window.innerWidth/100 + 'px');
+        })
+
+        let names = []
+
+        for(let f = 0; f < Events.length; f++) {
+            names[f] = Events[f].Names;
+        }
+
+        for(let r = 0; r < Events.length; r++){
+            let element = document.createElement("div");
+                    element.id = 'Event_' + r
+                    element.onclick = function() {
+                        
+                        let d = document.getElementById('Event_' + r)
+
+                        if(d.classList.contains('active')){
+                            d.classList.remove('active')
+                            let h = document.getElementById('EventOut_' + r)
+                            h.classList.remove('active')
+                        } else {
+                                d.classList.add('active')
+                                let h = document.getElementById('EventOut_' + r)
+                                h.classList.add('active')
+                                //document.getElementById('EventDate_' + r).style.display = 'flex'
+                            }
+                        
+                    }
+                    element.className = 'Events'
+                    document.getElementById('content').appendChild(element);
+                    
+
+                    let element5 = document.createElement('div')
+                    element5.id = 'EventOverName_' + r
+                    element5.className = 'EventOverName'
+                    document.getElementById('Event_' + r).appendChild(element5)
+
+                    let element2 = document.createElement('h2')
+                    element2.id = 'EventName_' + r
+                    element2.style.textAlign = 'center'
+                    element2.appendChild(document.createTextNode(Events[r].Names));
+
+                    document.getElementById('EventOverName_' + r).appendChild(element2)
+
+                    let element3 = document.createElement('div')
+                    element3.className = 'EventOut'
+                    element3.id = 'EventOut_' + r
+                    document.getElementById('Event_' + r).appendChild(element3)
+
+
+                    let element4 = document.createElement('h3')
+                    element4.id = 'EventDate_' + r
+                    element4.className = 'h3'
+                    element4.appendChild(document.createTextNode(Events[r].Dates));
+                    document.getElementById('EventOut_' + r).appendChild(element4)
+
+                    let element6 = document.createElement('p')
+                    element6.id = 'EventExplain_' + r
+                    element6.className = 'h4'
+                    if(Events[r].Explain2){
+                        element6.innerHTML = Events[r].Explain2
+                    } else {
+                    element6.appendChild(document.createTextNode(Events[r].Explain));
+                    }
+                    document.getElementById('EventOut_' + r).appendChild(element6)
+        }
+
+        
+
+        const SearchBar = document.getElementById('SearchBar')
+        const Searching = document.getElementById('searching')
+
+        SearchBar.addEventListener('input', function() {
+
+            
+
+            let inputText = SearchBar.value.toLowerCase()
+            let g = document.getElementsByTagName('h2')
+            let o = document.getElementsByTagName('p')      
+            let Ids = []
+
+            for(let r = 0; r < g.length; r++){
+                let d = document.getElementById('Event_' + r)
+
+                    d.classList.remove('active')
+                    let h = document.getElementById('EventOut_' + r)
+                    h.classList.remove('active')
+            }
+
+            if(inputText == ''){
+                for(let l = 0; l < g.length; l++){
+                    document.getElementById('Event_' + l).style.display = 'block'
+                }
+            }
+            for(let e = 0; e < g.length; e++){
+                let TextOne = g[e].innerHTML.toLowerCase()
+                let TextTwo = o[e].innerHTML.toLowerCase()
+                let HTMLtext = TextOne + TextTwo
+                let r = HTMLtext.search(inputText)
+                if(r>=0) {
+                    let v = g[e].parentNode
+                    let n = v.parentNode
+                    Ids.push(n.id)
+                    }
+            }
+            for(let w = 0; w < g.length; w++){
+                let p = g[w].parentNode
+                let m = p.parentNode
+                if(!Ids.includes(m.id)){
+                    document.getElementById(m.id).style.display = 'none'
+                } else {
+                    document.getElementById(m.id).style.display = 'block'
+                }
+            }
+
+        })
+
+
+    </script>
+</html>

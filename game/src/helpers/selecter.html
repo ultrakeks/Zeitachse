@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            * 
+            {
+                font-family: Verdana;
+            
+            }
+            .container {
+                z-index:1000;
+            }
+            .multiselect {
+                max-width: 400px;            
+            }
+
+            .selectBox {
+                font-size: 20px;
+                width: 500px;
+                position: relative;
+                background:darkcyan;
+                padding-bottom: 5px;
+                padding-top: 5px;
+                border: none;
+                color: ivory;
+                cursor: pointer;
+                border-radius: 0px 0px 20px 20px;
+
+
+            }
+
+            .allAge {
+                font-size: 30px;
+                width: 500px;
+                position: relative;
+                text-align: center;
+                background:darkcyan;
+                padding-bottom: 5px;
+                padding-top: 5px;                
+                border: none;
+                color: ivory;
+                cursor: pointer;
+                border-radius: 20px 20px 0px 0px;
+
+
+            }
+
+            .selectBox.active {
+                border-radius: 0px 0px 0px 0px;
+            }
+
+            .selectBox select {
+                width: 100%;
+                font-weight: bold;
+            }
+
+            .overSelect {
+                position: relative;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+            }
+
+
+            
+            #checkboxes {
+                width: 500px;     
+                font-size: 20px; 
+                padding: 5px;      
+                display: none;
+                background:darkcyan;
+                border: gray;
+                color: ivory;
+                cursor: pointer;
+                border-radius: 0px 0px 20px 20px;
+            }
+
+            #checkboxes label {
+                display: block;
+            }
+
+            #checkboxes label:hover {
+                background-color: #1e90ff;
+            }
+            .checkers {
+                width:30px;
+                height:30px;
+                background:white;
+                border:2px solid #555;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <form>
+            <div class='container' id='selectator'>
+            <div class='allAge'>
+                <input type='checkbox' id='all' class='checkers' checked>
+                <label for='all'>Alle Zeitalter</label>
+            </div>
+            <div class="multiselect">
+              <div class="selectBox" id='Btn_select'>
+
+                <input type="button"  value="Benutzerdefiniert" class='selectBox'>
+                <div class="overSelect"></div>
+              </div>
+              <div id="checkboxes">
+                <label for="hunters">
+                    <input type="checkbox" id="hunters" class='checkers' />Zeitalter der Jäger und Bauern / Prähistorie (-3000 v. Chr.)</label>
+                <label for="romanGreek">
+                  <input type="checkbox" id="romanGreek" class='checkers'/>Zeitalter der Römer und Griechen / Antike (~3000 v. Chr. - 500 n. Chr.)</label>
+                <label for="darkAge">
+                  <input type="checkbox" id="darkAge" class='checkers'/>Zeitalter der Mönche und Ritter / Frühmittelalter (~500  - 1000 n. Chr.)</label>
+                <label for="darkAge2">
+                  <input type="checkbox" id="darkAge2" class='checkers'/>Zeitalter der Städte und Staaten / Hohes Mittelalter (~1000 - 1500 n. Chr.)</label>
+                <label for="rennaisance">
+                  <input type="checkbox" id="rennaisance" class='checkers'/>Zeitalter der Entdecker und Reformatoren / Renaissance (~1500 - 1600 n. Chr.)</label>
+                <label for="goldAge">
+                    <input type="checkbox" id="goldAge" class='checkers'/>Zeitalter der Regenten und Fürsten / Goldenes Zeitalter (~1600 - 1700 n. Chr.)</label>
+                <label for="enlightment">
+                    <input type="checkbox" id="enlightment" class='checkers'/>Zeitalter der Perücken und Revolution / Aufklärung (~1700 - 1800 n. Chr.)</label>
+                <label for="industry">
+                    <input type="checkbox" id="industry" class='checkers'/>Zeitalter der Bürger und Dampfmaschinen / Industrialisierung (~1800 - 1900 n. Chr.)</label>
+                <label for="worldwar">
+                    <input type="checkbox" id="worldwar" class='checkers'/>Zeit der Weltkriege (~1900 - 1950 n. Chr.)</label>
+                <label for="now">
+                    <input type="checkbox" id="now" class='checkers'/>Zeitalter der Computer und Telekommunikation (~1950 n. Chr. - Jetzt)</label>
+
+              </div>
+            </div>
+            </div>
+          </form>
+    </body>
+    <script>
+
+
+        var expanded = false;
+
+function showCheckboxes() {
+  var checkboxes = document.getElementById("checkboxes");
+  const selectBox = document.querySelector('.selectBox');
+
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+        selectBox.classList.add('active');
+
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+    selectBox.classList.remove('active');
+
+  }
+}
+    </script>
+</html>
