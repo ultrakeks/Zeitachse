@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Zeitachse - Das Spiel</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+                <h1> Willkommen auf Zeitachse </h1>
+            </div>
+            <div class="fRow">
+                <div class="fColumn">
+
+                </div>
+                <div class="sColumn">
+
+                </div>
+                <div class="tColumn">
+                    <h3>Brand Roms</h3>
+                </div>
+                <div class="foColumn">
+
+                </div>
+                <div class="fiColumn">
+
+                </div>
+                <div class="siColumn">
+                    <h3>Verfassung Goldene Bulle</h3>
+                </div>
+            </div>
+            <div class="sRow">
+                <div class="fColumn">
+
+                </div>
+                <div class="sColumn">
+
+                </div>
+                <div class="tColumn">
+                    
+                </div>
+                <div class="foColumn">
+
+                </div>
+                <div class="fiColumn">
+
+                </div>
+                <div class="siColumn">
+                    
+                </div>
+            </div>
+            <div class="tRow">
+                <div class="fColumn">
+
+                </div>
+                <div class="sColumn">
+
+                </div>
+                <div class="tColumn">
+                    
+                </div>
+                <div class="foColumn">
+
+                </div>
+                <div class="fiColumn">
+
+                </div>
+                <div class="siColumn">
+                    
+                </div>
+            </div>
+            <div class="foRow">
+                <div class="fColumn">
+                    <h3>Ende der Steinzeit</h3>
+                </div>
+                <div class="sColumn">
+
+                </div>
+                <div class="tColumn">
+                    
+                </div>
+                <div class="foColumn">
+
+                </div>
+                <div class="fiColumn">
+                    <h3>Beginn der Kreuzzüge</h3>
+                </div>
+                <div class="siColumn">
+                    
+                </div>
+            </div>
+            <div class="fiRow">
+                <p>Zeitachse ist ein Spiel, welches geschichtliches Wissen Kindern spielerisch vermitteln soll.</p>
+            </div>
+            <div class="siRow">
+                <div class="bbox">
+                    <div style="cursor: pointer;"onclick="location.href='./Regelwerk/regelwerk.html'" class="rules">
+                        <div  class="header">
+                            <h4>Spielregeln</h4>
+                        </div>
+                        <div class="desc">
+                            <p>Hier findest du die Spielregeln zu unserem Spiel.</p>
+                        </div>
+                    </div>
+                    <div style="cursor: pointer;"onclick="location.href='http://www.spiel-zeitachse.de:8080'" class="play">
+                        <div class="header">
+                            <h4>Online spielen</h4>
+                        </div>
+                        <div class="desc">
+                            <p>Gemeinsam mit Freunden, </br> in Gruppen, oder als Klasse spielen.</p>
+                        </div>
+                    </div>
+                    <div style="cursor: pointer;"onclick="location.href='./Downloads/downloadB.html'" class="download">
+                        <div class="header">
+                            <h4>Download</h4>
+                        </div>
+                        <div class="desc">
+                            <p>Für diejenigen, die es lieber analog haben wollen.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div style="cursor: pointer" onclick="location.href='./Impressum/impressum.html'"class="imp">
+                <h4>Impressum</h4>
+            </div>
+        </div>
+        
+
+
+        
+        
+    </body>
+
+    <script>
+        const cont = document.getElementById('bbox')
+        document.querySelector(':root').style.setProperty('--z', 1200/window.innerHeight)
+    </script>

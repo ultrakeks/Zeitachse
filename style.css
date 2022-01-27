@@ -1,0 +1,441 @@
+*
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana;
+    /*background-image: linear-gradient(219deg, #0fb9b9,#209174);*/
+    background-color: #2c2f33;
+    color: aliceblue;
+    overflow: auto;
+    overflow-x:hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.container{
+    width: 100%;
+    height:100%;
+    display: grid;
+}
+.container .title{
+    justify-self: center;
+    text-align: center;
+    font-size: 30px;
+    font-style: bold;
+    text-decoration:underline;
+    margin-top: 30px;
+    border: 3px solid aliceblue;
+    border-radius: 50px;
+    padding-left: 150px;
+    padding-right: 150px;
+    background-color: #404447;
+}
+.container .fRow{
+    width: 100%;
+    align-items: center;
+    display:grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    padding-top: 40px;
+    
+}
+
+.container .fRow .tColumn{
+    border: 1px solid aliceblue;
+    color: #2c2f33;
+    border-radius: 25px 25px 25px 25px;
+    height: 150px;
+    width: 300px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+    animation-name: a;
+    animation-duration: 7s;
+}
+
+@keyframes a{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+.container .fRow .siColumn{
+    border: 1px solid aliceblue;
+    color: #2c2f33;
+    border-radius: 25px 25px 25px 25px;
+    height: 150px;
+    width: 300px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+    animation-name: b;
+    animation-duration: 14s;
+}
+
+@keyframes b{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+
+.container .sRow{
+    width: 100%;
+    align-items: center;
+    display:grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    
+}
+.container .sRow .fColumn{
+    border-bottom: 2px solid aliceblue;
+    height: 150px;
+    animation-name: c;
+    animation-duration: 3s;
+}
+
+@keyframes c{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+
+.container .sRow .sColumn{
+    border-bottom: 2px solid aliceblue;
+    height: 150px;
+    animation-name: d;
+    animation-duration: 6s;
+}
+
+@keyframes d{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+.container .sRow .tColumn{
+    border-left: 5px solid aliceblue;
+    height: 150px;
+    border-bottom: 2px solid aliceblue;
+    animation-name: e;
+    animation-duration: 8s;
+}
+
+@keyframes e{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+.container .sRow .foColumn{
+    border-bottom: 2px solid aliceblue;
+    height: 150px;
+    animation-name: f;
+    animation-duration: 9s;
+}
+
+@keyframes f{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+
+.container .sRow .fiColumn{
+    border-bottom: 2px solid aliceblue;
+    height: 150px;
+    animation-name: g;
+    animation-duration: 12s;
+}
+
+@keyframes g{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+
+.container .sRow .siColumn{
+    border-left: 5px solid aliceblue;
+    height: 150px;
+    border-bottom: 2px solid aliceblue;
+    animation-name: h;
+    animation-duration: 13s;
+}
+
+@keyframes h{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+.container .tRow {
+    width: 100%;
+    align-items: center;
+    display:grid;
+    grid-template-columns: auto auto auto auto auto auto;
+}
+
+.container .tRow .fColumn{
+    height: 150px;
+    border-right: 5px solid aliceblue;
+    animation-name: i;
+    animation-duration: 4s;
+}
+
+
+@keyframes i{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+
+.container .tRow .fiColumn{
+    height: 150px;
+    border-left: 5px solid aliceblue;
+    animation-name: j;
+    animation-duration: 10s;
+}
+
+@keyframes j{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+.container .foRow{
+    width: 100%;
+    align-items: center;
+    display:grid;
+    grid-template-columns: auto auto auto auto auto auto;
+}
+
+.container .foRow .fColumn{
+    border: 1px solid aliceblue;
+    color: #2c2f33;
+    border-radius: 25px 25px 25px 25px;
+    height: 150px;
+    width: 300px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    justify-self: right;
+    background-color: aliceblue;
+    animation-name: k;
+    animation-duration: 5s;
+}
+
+@keyframes k{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+
+
+.container .foRow .fiColumn{
+    border: 1px solid aliceblue;
+    color: #2c2f33;
+    border-radius: 25px 25px 25px 25px;
+    height: 150px;
+    width: 300px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+    animation-name: l;
+    animation-duration: 11s;
+}
+
+@keyframes l{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+
+.container .fiRow{
+    margin-top: 30px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    border: 2px solid aliceblue;
+    background-color: aliceblue;
+    color: #2c2f33;
+}
+
+.container .siRow{
+    margin-top: 30px;
+    width: 100%;
+}
+
+.container .siRow .bbox{
+    background-color: aliceblue;
+    color: aliceblue;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    height: 500px;
+    width: 1200px;
+    border-radius: 30px;
+    margin: 50px auto 100px;
+}
+
+
+.container .siRow .bbox .rules{
+    background-color: #2c2f33;
+    margin: 50px;
+    border-radius: 30px;
+    transition: 0.3s;
+    display: block;
+}
+
+.container .siRow .bbox .rules:hover{
+    margin: 20px;
+    background-color: rgb(64, 68, 71);
+    transition: 0.3s;
+    
+}
+
+.container .siRow .bbox .rules .header{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    border-bottom: 1px solid aliceblue;
+}
+
+
+.container .siRow .bbox .rules .desc{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    line-height: 160%;
+    font-size: 20px;
+    padding: 20px;
+}
+
+
+
+.container .siRow .bbox .play{
+    background-color: #209174;
+    margin: 35px 50px 50px 35px;
+    border-radius: 30px;
+    transition: 0.3s;
+    display: block;
+}
+
+.container .siRow .bbox .play:hover{
+    margin: 20px;
+    background-color: #117c6e;
+    transition: 0.3s;
+    
+}
+
+.container .siRow .bbox .play .header{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    border-bottom: 1px solid aliceblue;
+    min-width: 180px;
+   
+}
+
+
+.container .siRow .bbox .play .desc{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    line-height: 160%;
+    font-size: 20px;
+    padding: 20px;
+    
+}
+
+
+.container .siRow .bbox .download{
+    background-color: #2c2f33;
+    margin: 50px;
+    border-radius: 30px;
+    transition: 0.3s;
+    display: block;
+}
+
+.container .siRow .bbox .download:hover{
+    margin: 20px;
+    background-color: rgb(64, 68, 71);
+    transition: 0.3s;
+    
+}
+
+
+.container .siRow .bbox .download .header{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    border-bottom: 1px solid aliceblue;
+}
+
+
+.container .siRow .bbox .download .desc{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    line-height: 160%;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.container .imp{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    border: 2px solid aliceblue;
+    background-color: aliceblue;
+    color: #2c2f33;
+    
+}
+
+
+
+
+@media (max-height: 570px){
+    .ubox .content{
+        line-height: normal;
+
+    }
+}
+
+@media screen and (orientation:portrait){
+    .container .siRow .bbox{
+        width: 100%;
+        height: 70%;
+    }
+    .container .siRow .bbox .rules{
+        margin: 0;
+        margin-left: 5px;
+        margin-bottom: 50px;
+        margin-top: 40px;
+        float: left;
+    }
+    .container .siRow .bbox .download{
+        margin: 0;
+        margin-right: 5px;
+        margin-top: 50px;
+        margin-bottom: 40px;
+        float: left;
+    }
+    .container .siRow .bbox .play{
+        float: left;
+        margin: 35px 35px 40px 40px;
+    }
+    .container .siRow .bbox .rules:hover{
+        margin: 0;
+        margin-left: 5px;
+        margin-bottom: 60px;
+        margin-top: 30px;
+    }
+    .container .siRow .bbox .download:hover{
+        margin: 0;
+        margin-right: 5px;
+        margin-bottom: 60px;
+        margin-top: 30px;
+    }
+    .container .siRow .bbox .play:hover{
+        margin: 20px 35px 60px 40px;
+
+    }
+}
